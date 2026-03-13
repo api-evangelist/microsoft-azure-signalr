@@ -1,0 +1,33 @@
+aid: microsoft-azure-signalr
+url: https://raw.githubusercontent.com/api-evangelist/microsoft-azure-signalr/refs/heads/main/apis.yml
+apis:
+  - aid: microsoft-azure-signalr:rest-api
+    name: Azure SignalR Service REST API
+    tags:
+      - Real-Time
+      - WebSockets
+      - SignalR
+      - Messaging
+      - Push
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://management.azure.com/
+    humanURL: https://learn.microsoft.com/en-us/rest/api/signalr/
+    properties:
+      - url: https://learn.microsoft.com/en-us/rest/api/signalr/
+        type: Documentation
+    description: >-
+      Azure SignalR Service REST API enables management of real-time web communication services. It supports creating SignalR instances, managing connections, sending messages to clients and groups, and configuring upstream endpoints for serverless real-time messaging.
+common:
+  - type: Portal
+    url: https://portal.azure.com/
+  - type: Pricing
+    url: https://azure.microsoft.com/en-us/pricing/
+  - type: Terms of Service
+    url: https://www.microsoft.com/en-us/legal/terms-of-use
+  - type: Privacy Policy
+    url: https://privacy.microsoft.com/en-us/privacystatement
+  - type: Support
+    url: https://support.microsoft.com/
+maintainers:
+  - name: Kin Lane
+    email: kin@apievangelist.com
