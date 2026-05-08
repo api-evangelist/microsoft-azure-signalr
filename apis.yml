@@ -32,6 +32,8 @@ apis:
       - WebSockets
       - Messaging
     properties:
+      - url: openapi/microsoft-azure-signalr-openapi.yml
+        type: OpenAPI
       - type: Documentation
         url: https://learn.microsoft.com/en-us/rest/api/signalr/
       - type: Authentication
