@@ -1,0 +1,229 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure SignalR Service REST API — SignalR
+  description: 'Azure SignalR Service REST API — SignalR. 6 operations. Lead operation: Azure SignalR Service REST API List
+    by subscription. Self-contained Naftiko capability covering one Microsoft Azure Signalr business surface.'
+  tags:
+  - Microsoft Azure Signalr
+  - SignalR
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_AZURE_SIGNALR_API_KEY: MICROSOFT_AZURE_SIGNALR_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: microsoft-azure-signalr-signalr
+    baseUri: https://management.azure.com
+    description: Azure SignalR Service REST API — SignalR business capability. Self-contained, no shared references.
+    resources:
+    - name: subscriptions-subscriptionId-providers-Microsoft.SignalRService-signalR
+      path: /subscriptions/{subscriptionId}/providers/Microsoft.SignalRService/signalR
+      operations:
+      - name: listsignalrbysubscription
+        method: GET
+        description: Azure SignalR Service REST API List by subscription
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/signalR
+      operations:
+      - name: listsignalrbyresourcegroup
+        method: GET
+        description: Azure SignalR Service REST API List by resource group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/signalR/{name}
+      operations:
+      - name: getsignalr
+        method: GET
+        description: Azure SignalR Service REST API Get resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createorupdatesignalr
+        method: PUT
+        description: Azure SignalR Service REST API Create or update resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: updatesignalr
+        method: PATCH
+        description: Azure SignalR Service REST API Update resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deletesignalr
+        method: DELETE
+        description: Azure SignalR Service REST API Delete resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_AZURE_SIGNALR_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: microsoft-azure-signalr-signalr-rest
+    port: 8080
+    description: REST adapter for Azure SignalR Service REST API — SignalR. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/subscriptions/{subscriptionid}/providers/microsoft-signalrservice/signalr
+      name: subscriptions-subscriptionid-providers-microsoft-signalrservice-signalr
+      description: REST surface for subscriptions-subscriptionId-providers-Microsoft.SignalRService-signalR.
+      operations:
+      - method: GET
+        name: listsignalrbysubscription
+        description: Azure SignalR Service REST API List by subscription
+        call: microsoft-azure-signalr-signalr.listsignalrbysubscription
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-signalrservice/signalr
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: listsignalrbyresourcegroup
+        description: Azure SignalR Service REST API List by resource group
+        call: microsoft-azure-signalr-signalr.listsignalrbyresourcegroup
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-signalrservice/signalr/{name}
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: getsignalr
+        description: Azure SignalR Service REST API Get resource
+        call: microsoft-azure-signalr-signalr.getsignalr
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: createorupdatesignalr
+        description: Azure SignalR Service REST API Create or update resource
+        call: microsoft-azure-signalr-signalr.createorupdatesignalr
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updatesignalr
+        description: Azure SignalR Service REST API Update resource
+        call: microsoft-azure-signalr-signalr.updatesignalr
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletesignalr
+        description: Azure SignalR Service REST API Delete resource
+        call: microsoft-azure-signalr-signalr.deletesignalr
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: microsoft-azure-signalr-signalr-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Azure SignalR Service REST API — SignalR. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: azure-signalr-service-rest-api
+      description: Azure SignalR Service REST API List by subscription
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-signalr-signalr.listsignalrbysubscription
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-signalr-service-rest-api-2
+      description: Azure SignalR Service REST API List by resource group
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-signalr-signalr.listsignalrbyresourcegroup
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-signalr-service-rest-api-3
+      description: Azure SignalR Service REST API Get resource
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-signalr-signalr.getsignalr
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-signalr-service-rest-api-4
+      description: Azure SignalR Service REST API Create or update resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-signalr-signalr.createorupdatesignalr
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-signalr-service-rest-api-5
+      description: Azure SignalR Service REST API Update resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-signalr-signalr.updatesignalr
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-signalr-service-rest-api-6
+      description: Azure SignalR Service REST API Delete resource
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: microsoft-azure-signalr-signalr.deletesignalr
+      outputParameters:
+      - type: object
+        mapping: $.
