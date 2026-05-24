@@ -61,6 +61,8 @@ common:
     url: https://azure.microsoft.com/en-us/blog/product/azure-signalr-service/
   - type: StackOverflow
     url: https://stackoverflow.com/questions/tagged/azure-signalr
+  - type: LLMsTxt
+    url: https://portal.azure.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
