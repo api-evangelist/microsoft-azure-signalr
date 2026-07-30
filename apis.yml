@@ -5,7 +5,20 @@ description: >-
   Azure SignalR Service REST API enables management of real-time web communication services. It supports creating
   SignalR instances, managing connections, sending messages to clients and groups, and configuring upstream endpoints
   for serverless real-time messaging.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/microsoft-azure-signalr.png
 tags:
   - Real-Time
   - WebSockets
@@ -16,26 +29,36 @@ created: '2026-03-13'
 modified: '2026-05-19'
 specificationVersion: '0.20'
 apis:
-  - aid: microsoft-azure-signalr:rest-api
-    name: Azure SignalR Service REST API
-    description: >-
-      Azure SignalR Service REST API enables management of real-time web communication services. It supports creating
-      SignalR instances, managing connections, sending messages to clients and groups, and configuring upstream
-      endpoints for serverless real-time messaging.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://learn.microsoft.com/en-us/rest/api/signalr/
-    baseURL: https://management.azure.com/
-    tags:
-      - Real-Time
-      - WebSockets
-      - Messaging
-    properties:
-      - url: openapi/microsoft-azure-signalr-openapi.yml
-        type: OpenAPI
-      - type: Documentation
-        url: https://learn.microsoft.com/en-us/rest/api/signalr/
-      - type: Authentication
-        url: https://learn.microsoft.com/en-us/azure/active-directory/develop/authentication-flows-app-scenarios
+- aid: microsoft-azure-signalr:microsoft-azure-signalr-operations-api
+  name: Azure SignalR Service Operations API
+  description: Operations operations
+  humanURL: https://learn.microsoft.com/en-us/rest/api/signalr/
+  baseURL: https://management.azure.com/
+  tags:
+  - Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-azure-signalr-operations-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/signalr/
+  - type: Authentication
+    url: >-
+      https://learn.microsoft.com/en-us/azure/active-directory/develop/authentication-flows-app-scenarios
+- aid: microsoft-azure-signalr:microsoft-azure-signalr-signalr-api
+  name: Azure SignalR Service SignalR API
+  description: SignalR operations
+  humanURL: https://learn.microsoft.com/en-us/rest/api/signalr/
+  baseURL: https://management.azure.com/
+  tags:
+  - SignalR
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-azure-signalr-signalr-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/signalr/
+  - type: Authentication
+    url: >-
+      https://learn.microsoft.com/en-us/azure/active-directory/develop/authentication-flows-app-scenarios
 common:
   - type: AgenticAccess
     url: agentic-access/microsoft-azure-signalr-agentic-access.yml
