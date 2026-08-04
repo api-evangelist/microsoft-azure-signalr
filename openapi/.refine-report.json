@@ -1,0 +1,16 @@
+{
+  "provider": "microsoft-azure-signalr",
+  "sources": [
+    "microsoft-azure-signalr-operations-api-openapi.yml",
+    "microsoft-azure-signalr-signalr-api-openapi.yml"
+  ],
+  "outputs": [
+    "microsoft-azure-signalr-operations-api-openapi.yml",
+    "microsoft-azure-signalr-signalr-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
