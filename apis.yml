@@ -27,7 +27,7 @@ tags:
   - Push
 created: '2026-03-13'
 modified: '2026-05-19'
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 apis:
 - aid: microsoft-azure-signalr:microsoft-azure-signalr-operations-api
   name: Azure SignalR Service Operations API
