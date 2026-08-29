@@ -5,6 +5,18 @@ description: >-
   Azure SignalR Service REST API enables management of real-time web communication services. It supports creating
   SignalR instances, managing connections, sending messages to clients and groups, and configuring upstream endpoints
   for serverless real-time messaging.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
