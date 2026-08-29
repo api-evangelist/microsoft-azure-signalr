@@ -1,0 +1,24 @@
+slug: microsoft-azure-signalr
+provider: Azure SignalR Service
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Telecommunications
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: SignalR
+  spec_file: microsoft-azure-signalr-signalr-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: createOrUpdateSignalr  Azure SignalR Service REST API Create or update resource
+  reason: Management-plane CRUD over SignalR service resources within subscriptions and resource groups
+    is provisioning and stewardship of cloud infrastructure, mapping to IT Infrastructure Management.

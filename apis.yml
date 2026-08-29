@@ -73,6 +73,9 @@ apis:
     url: >-
       https://learn.microsoft.com/en-us/azure/active-directory/develop/authentication-flows-app-scenarios
 common:
+  - type: CapabilityMap
+    url: capabilities/microsoft-azure-signalr-capability-edges.yml
+    name: Azure SignalR Service Business Capability Map
   - type: AgenticAccess
     url: agentic-access/microsoft-azure-signalr-agentic-access.yml
   - type: DomainSecurity
