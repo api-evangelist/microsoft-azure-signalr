@@ -1,6 +1,7 @@
 aid: microsoft-azure-signalr
-url: https://raw.githubusercontent.com/api-evangelist/microsoft-azure-signalr/refs/heads/main/apis.yml
+url: https://learn.microsoft.com/en-us/azure/azure-signalr/
 name: Azure SignalR Service
+x-parent: microsoft-azure
 description: >-
   Azure SignalR Service REST API enables management of real-time web communication services. It supports creating
   SignalR instances, managing connections, sending messages to clients and groups, and configuring upstream endpoints
