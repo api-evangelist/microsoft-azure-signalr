@@ -2,10 +2,9 @@ aid: microsoft-azure-signalr
 url: https://learn.microsoft.com/en-us/azure/azure-signalr/
 name: Azure SignalR Service
 x-parent: microsoft-azure
-description: >-
-  Azure SignalR Service REST API enables management of real-time web communication services. It supports creating
-  SignalR instances, managing connections, sending messages to clients and groups, and configuring upstream endpoints
-  for serverless real-time messaging.
+description: Azure SignalR Service REST API enables management of real-time web communication services.
+  It supports creating SignalR instances, managing connections, sending messages to clients and groups,
+  and configuring upstream endpoints for serverless real-time messaging.
 deliveryModel:
   model: saas
   open_source: false
@@ -33,13 +32,13 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/microsoft-azure-signalr.png
 tags:
-  - Real-Time
-  - WebSockets
-  - SignalR
-  - Messaging
-  - Push
+- Real-Time
+- WebSockets
+- SignalR
+- Messaging
+- Push
 created: '2026-03-13'
-modified: '2026-05-19'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
 - aid: microsoft-azure-signalr:microsoft-azure-signalr-operations-api
@@ -56,8 +55,7 @@ apis:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/signalr/
   - type: Authentication
-    url: >-
-      https://learn.microsoft.com/en-us/azure/active-directory/develop/authentication-flows-app-scenarios
+    url: https://learn.microsoft.com/en-us/azure/active-directory/develop/authentication-flows-app-scenarios
 - aid: microsoft-azure-signalr:microsoft-azure-signalr-signalr-api
   name: Azure SignalR Service SignalR API
   description: SignalR operations
@@ -71,44 +69,45 @@ apis:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/signalr/
   - type: Authentication
-    url: >-
-      https://learn.microsoft.com/en-us/azure/active-directory/develop/authentication-flows-app-scenarios
+    url: https://learn.microsoft.com/en-us/azure/active-directory/develop/authentication-flows-app-scenarios
 common:
-  - type: CapabilityMap
-    url: capabilities/microsoft-azure-signalr-capability-edges.yml
-    name: Azure SignalR Service Business Capability Map
-  - type: AgenticAccess
-    url: agentic-access/microsoft-azure-signalr-agentic-access.yml
-  - type: DomainSecurity
-    url: security/microsoft-azure-signalr-domain-security.yml
-  - type: Authentication
-    url: authentication/microsoft-azure-signalr-authentication.yml
-  - type: OAuthScopes
-    url: scopes/microsoft-azure-signalr-scopes.yml
-  - type: GitHubOrganization
-    url: https://github.com/Azure
-  - type: Portal
-    url: https://portal.azure.com/
-  - type: Pricing
-    url: https://azure.microsoft.com/en-us/pricing/details/signalr-service/
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/azure/azure-signalr/
-  - type: GettingStarted
-    url: https://learn.microsoft.com/en-us/azure/azure-signalr/signalr-quickstart-azure-signalr-service-arm-template
-  - type: StatusPage
-    url: https://azure.status.microsoft/en-us/status
-  - type: TermsOfService
-    url: https://www.microsoft.com/en-us/legal/terms-of-use
-  - type: PrivacyPolicy
-    url: https://privacy.microsoft.com/en-us/privacystatement
-  - type: Support
-    url: https://support.microsoft.com/
-  - type: Blog
-    url: https://azure.microsoft.com/en-us/blog/product/azure-signalr-service/
-  - type: StackOverflow
-    url: https://stackoverflow.com/questions/tagged/azure-signalr
-  - type: LlmsText
-    url: https://portal.azure.com/llms.txt
+- type: Website
+  url: https://microsoft.com
+- type: CapabilityMap
+  url: capabilities/microsoft-azure-signalr-capability-edges.yml
+  name: Azure SignalR Service Business Capability Map
+- type: AgenticAccess
+  url: agentic-access/microsoft-azure-signalr-agentic-access.yml
+- type: DomainSecurity
+  url: security/microsoft-azure-signalr-domain-security.yml
+- type: Authentication
+  url: authentication/microsoft-azure-signalr-authentication.yml
+- type: OAuthScopes
+  url: scopes/microsoft-azure-signalr-scopes.yml
+- type: GitHubOrganization
+  url: https://github.com/Azure
+- type: Portal
+  url: https://portal.azure.com/
+- type: Pricing
+  url: https://azure.microsoft.com/en-us/pricing/details/signalr-service/
+- type: Documentation
+  url: https://learn.microsoft.com/en-us/azure/azure-signalr/
+- type: GettingStarted
+  url: https://learn.microsoft.com/en-us/azure/azure-signalr/signalr-quickstart-azure-signalr-service-arm-template
+- type: StatusPage
+  url: https://azure.status.microsoft/en-us/status
+- type: TermsOfService
+  url: https://www.microsoft.com/en-us/legal/terms-of-use
+- type: PrivacyPolicy
+  url: https://privacy.microsoft.com/en-us/privacystatement
+- type: Support
+  url: https://support.microsoft.com/
+- type: Blog
+  url: https://azure.microsoft.com/en-us/blog/product/azure-signalr-service/
+- type: StackOverflow
+  url: https://stackoverflow.com/questions/tagged/azure-signalr
+- type: LlmsText
+  url: https://portal.azure.com/llms.txt
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
