@@ -77,6 +77,8 @@ apis:
   - type: Authentication
     url: https://learn.microsoft.com/en-us/azure/active-directory/develop/authentication-flows-app-scenarios
 common:
+- type: Plans
+  url: plans/microsoft-azure-signalr-plans-pricing.yml
 - type: Website
   url: https://microsoft.com
 - type: CapabilityMap
