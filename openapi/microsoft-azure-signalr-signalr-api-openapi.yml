@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Azure Service REST Operations SignalR API
+  title: Azure Service REST Signal R API
   description: Azure SignalR Service provides real-time web functionality. The management REST API manages SignalR resources, private endpoints, network ACLs, and shared keys.
   version: '2024-01-01'
 servers:
@@ -169,29 +169,29 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
+  parameters:
+    subscriptionId:
+      name: subscriptionId
+      in: path
+      required: true
+      description: The ID of the target subscription.
+      schema:
+        type: string
+    apiVersion:
+      name: api-version
+      in: query
+      required: true
+      description: The API version to use for this operation.
+      schema:
+        type: string
+    resourceGroupName:
+      name: resourceGroupName
+      in: path
+      required: true
+      description: The name of the resource group.
+      schema:
+        type: string
   schemas:
-    ResourceList:
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/Resource'
-        nextLink:
-          type: string
-          description: URL to the next page of results.
-    ErrorResponse:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-            message:
-              type: string
-            target:
-              type: string
     Resource:
       type: object
       properties:
@@ -214,28 +214,28 @@ components:
         properties:
           type: object
           description: Resource-specific properties.
-  parameters:
-    subscriptionId:
-      name: subscriptionId
-      in: path
-      required: true
-      description: The ID of the target subscription.
-      schema:
-        type: string
-    resourceGroupName:
-      name: resourceGroupName
-      in: path
-      required: true
-      description: The name of the resource group.
-      schema:
-        type: string
-    apiVersion:
-      name: api-version
-      in: query
-      required: true
-      description: The API version to use for this operation.
-      schema:
-        type: string
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+            target:
+              type: string
+    ResourceList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Resource'
+        nextLink:
+          type: string
+          description: URL to the next page of results.
   securitySchemes:
     azure_auth:
       type: oauth2
