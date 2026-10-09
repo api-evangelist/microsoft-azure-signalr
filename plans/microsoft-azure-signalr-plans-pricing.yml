@@ -47,3 +47,34 @@ rate_limit_statements:
 - Concurrent Connections per Unit 20
 - Messages/Unit/Day 20,000
 - Max Units 1
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - metered
+  units: []
+  plans:
+  - name: Free
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - other
+    periods:
+    - none
+  - name: Standard
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - other
+    periods:
+    - none
+  - name: Premium
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - other
+    periods:
+    - none
